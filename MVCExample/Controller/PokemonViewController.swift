@@ -19,11 +19,14 @@ class PokemonViewController: UIViewController, UICollectionViewDataSource, UICol
     }
    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10;
+        return manager.pokemonCount()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pokeCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pokeCell", for: indexPath) as! PokeCell
+        let pokemon = manager.pokemonAtIndex(index: indexPath.row)
+        cell.imageView.image = UIImage.init(named: pokemon.image)
+        cell.label.text = pokemon.name
         return cell;
     }
 }
