@@ -18,6 +18,7 @@
 		DF85F9A728BA5F9500EE401A /* PokemonDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF85F9A628BA5F9500EE401A /* PokemonDataManager.swift */; };
 		DF85F9A928BA641E00EE401A /* PokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF85F9A828BA641E00EE401A /* PokemonViewController.swift */; };
 		DF85F9AD28BA818200EE401A /* PokeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF85F9AC28BA818200EE401A /* PokeCell.swift */; };
+		DF85F9B128BA9D0C00EE401A /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF85F9B028BA9D0C00EE401A /* PokemonDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		DF85F9A628BA5F9500EE401A /* PokemonDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDataManager.swift; sourceTree = "<group>"; };
 		DF85F9A828BA641E00EE401A /* PokemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewController.swift; sourceTree = "<group>"; };
 		DF85F9AC28BA818200EE401A /* PokeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeCell.swift; sourceTree = "<group>"; };
+		DF85F9B028BA9D0C00EE401A /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				DF85F9A828BA641E00EE401A /* PokemonViewController.swift */,
+				DF85F9B028BA9D0C00EE401A /* PokemonDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 				DF85F9A928BA641E00EE401A /* PokemonViewController.swift in Sources */,
 				DF85F98A28B9AD1400EE401A /* AppDelegate.swift in Sources */,
 				DF85F9AD28BA818200EE401A /* PokeCell.swift in Sources */,
+				DF85F9B128BA9D0C00EE401A /* PokemonDetailViewController.swift in Sources */,
 				DF85F9A728BA5F9500EE401A /* PokemonDataManager.swift in Sources */,
 				DF85F98C28B9AD1400EE401A /* SceneDelegate.swift in Sources */,
 			);

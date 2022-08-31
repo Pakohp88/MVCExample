@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -19,7 +20,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7nN-2E-xfJ">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="Red"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="T17-o4-tVL">
                                     <size key="itemSize" width="177" height="177"/>
                                     <size key="headerReferenceSize" width="0.0" height="100"/>
@@ -36,15 +37,16 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZkC-v4-L0I">
                                                     <rect key="frame" x="0.0" y="0.0" width="177" height="137"/>
-                                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                    <color key="backgroundColor" name="Yellow"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRs-TQ-bMh">
                                                     <rect key="frame" x="0.0" y="137" width="177" height="40"/>
+                                                    <color key="backgroundColor" name="Blue"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="IDM-4I-bqP"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" systemColor="secondarySystemBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -67,9 +69,23 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="sLs-k9-kiK">
+                                <collectionReusableView key="sectionHeaderView" autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="header" id="sLs-k9-kiK">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pokemon-Logo-1" translatesAutoresizingMaskIntoConstraints="NO" id="NpQ-Of-kxB">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="1Pk-FJ-SKM"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="NpQ-Of-kxB" firstAttribute="top" secondItem="sLs-k9-kiK" secondAttribute="top" id="RMQ-Nd-djm"/>
+                                        <constraint firstAttribute="trailing" secondItem="NpQ-Of-kxB" secondAttribute="trailing" id="btD-3E-Egt"/>
+                                        <constraint firstItem="NpQ-Of-kxB" firstAttribute="leading" secondItem="sLs-k9-kiK" secondAttribute="leading" id="h5a-Yb-3U2"/>
+                                        <constraint firstItem="NpQ-Of-kxB" firstAttribute="centerX" secondItem="sLs-k9-kiK" secondAttribute="centerX" id="tDh-BV-OxC"/>
+                                    </constraints>
                                 </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="A5u-dn-OIX"/>
@@ -88,22 +104,110 @@
                     </view>
                     <connections>
                         <outlet property="PokemonCollectionView" destination="7nN-2E-xfJ" id="LUv-Ce-BE9"/>
+                        <segue destination="GZK-1H-9cp" kind="presentation" identifier="PokemonDetailSeague" id="v1Q-iZ-U0H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="129"/>
+            <point key="canvasLocation" x="137.68115942028987" y="128.57142857142856"/>
+        </scene>
+        <!--Pokemon Detail View Controller-->
+        <scene sceneID="Gr7-Lf-g6a">
+            <objects>
+                <viewController id="GZK-1H-9cp" customClass="PokemonDetailViewController" customModule="MVCExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gpg-4Y-WYq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nh9-Ye-lqb">
+                                <rect key="frame" x="0.0" y="94" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bdA-W2-f2K"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="18"/>
+                                <color key="textColor" name="Blue"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z1i-sP-19k">
+                                <rect key="frame" x="20" y="164" width="374" height="194"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cx-N0-r8F">
+                                <rect key="frame" x="0.0" y="411" width="414" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="Red 2"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qx-11-MLr">
+                                <rect key="frame" x="0.0" y="506" width="414" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="Red"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olV-BL-oeI">
+                                <rect key="frame" x="0.0" y="598" width="414" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="Red 2"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="T7d-F5-jLL"/>
+                        <color key="backgroundColor" name="Yellow"/>
+                        <constraints>
+                            <constraint firstItem="Nh9-Ye-lqb" firstAttribute="top" secondItem="T7d-F5-jLL" secondAttribute="top" constant="50" id="2M2-nk-jQK"/>
+                            <constraint firstItem="olV-BL-oeI" firstAttribute="centerX" secondItem="gpg-4Y-WYq" secondAttribute="centerX" id="Avs-xg-XAM"/>
+                            <constraint firstItem="9qx-11-MLr" firstAttribute="centerX" secondItem="gpg-4Y-WYq" secondAttribute="centerX" id="CIR-rv-JWh"/>
+                            <constraint firstItem="olV-BL-oeI" firstAttribute="top" secondItem="9qx-11-MLr" secondAttribute="bottom" constant="30" id="Fdc-Fu-doO"/>
+                            <constraint firstItem="T7d-F5-jLL" firstAttribute="trailing" secondItem="8cx-N0-r8F" secondAttribute="trailing" id="IEX-MZ-6tU"/>
+                            <constraint firstItem="Nh9-Ye-lqb" firstAttribute="leading" secondItem="T7d-F5-jLL" secondAttribute="leading" id="OZI-lZ-Ts6"/>
+                            <constraint firstItem="Nh9-Ye-lqb" firstAttribute="centerX" secondItem="gpg-4Y-WYq" secondAttribute="centerX" id="Qgf-u1-MmC"/>
+                            <constraint firstItem="T7d-F5-jLL" firstAttribute="trailing" secondItem="z1i-sP-19k" secondAttribute="trailing" constant="20" id="R1c-X9-OJf"/>
+                            <constraint firstItem="Nh9-Ye-lqb" firstAttribute="trailing" secondItem="T7d-F5-jLL" secondAttribute="trailing" id="TW1-aM-tmR"/>
+                            <constraint firstItem="T7d-F5-jLL" firstAttribute="trailing" secondItem="9qx-11-MLr" secondAttribute="trailing" id="U1o-0y-ZhY"/>
+                            <constraint firstItem="z1i-sP-19k" firstAttribute="top" secondItem="Nh9-Ye-lqb" secondAttribute="bottom" constant="20" id="aLz-3x-OA4"/>
+                            <constraint firstItem="9qx-11-MLr" firstAttribute="top" secondItem="8cx-N0-r8F" secondAttribute="bottom" constant="30" id="ceN-ZB-8p1"/>
+                            <constraint firstItem="z1i-sP-19k" firstAttribute="leading" secondItem="T7d-F5-jLL" secondAttribute="leading" constant="20" id="eeR-86-a5V"/>
+                            <constraint firstItem="olV-BL-oeI" firstAttribute="leading" secondItem="T7d-F5-jLL" secondAttribute="leading" id="jnY-gj-5b9"/>
+                            <constraint firstItem="8cx-N0-r8F" firstAttribute="leading" secondItem="T7d-F5-jLL" secondAttribute="leading" id="kq3-vE-kIA"/>
+                            <constraint firstItem="8cx-N0-r8F" firstAttribute="top" secondItem="z1i-sP-19k" secondAttribute="bottom" constant="30" id="lX5-hf-6Yp"/>
+                            <constraint firstItem="9qx-11-MLr" firstAttribute="leading" secondItem="T7d-F5-jLL" secondAttribute="leading" id="oZ7-8l-L5j"/>
+                            <constraint firstItem="T7d-F5-jLL" firstAttribute="trailing" secondItem="olV-BL-oeI" secondAttribute="trailing" id="sdJ-yf-UCR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="label1" destination="Nh9-Ye-lqb" id="8ah-ql-Gfa"/>
+                        <outlet property="label2" destination="8cx-N0-r8F" id="sRV-7a-YmB"/>
+                        <outlet property="label3" destination="9qx-11-MLr" id="cQY-Jy-84W"/>
+                        <outlet property="label4" destination="olV-BL-oeI" id="n9M-PK-51J"/>
+                        <outlet property="viewImage1" destination="z1i-sP-19k" id="G59-IO-V7g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GAN-0A-WZ2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="904.34782608695662" y="140.625"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Pokemon-Logo-1" width="1200" height="442"/>
+        <namedColor name="Blue">
+            <color red="0.22747397420000001" green="0.29397064449999999" blue="0.78186780209999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Red">
+            <color red="0.80352360010000001" green="0.21171051260000001" blue="0.1716146469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Red 2">
+            <color red="0.91533637050000005" green="0.24644649029999999" blue="0.2011285424" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Yellow">
+            <color red="0.99229389430000003" green="0.8699209094" blue="0.1990928948" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
