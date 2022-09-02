@@ -149,6 +149,19 @@
                                 <color key="textColor" name="Red 2"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="olT-Wi-8kd">
+                                <rect key="frame" x="20" y="711" width="374" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Cerrar">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" name="Blue"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="goBackButton:" destination="GZK-1H-9cp" eventType="touchUpInside" id="SVx-z9-4Sy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="T7d-F5-jLL"/>
                         <color key="backgroundColor" name="Yellow"/>
@@ -161,11 +174,14 @@
                             <constraint firstItem="Nh9-Ye-lqb" firstAttribute="leading" secondItem="T7d-F5-jLL" secondAttribute="leading" id="OZI-lZ-Ts6"/>
                             <constraint firstItem="Nh9-Ye-lqb" firstAttribute="centerX" secondItem="gpg-4Y-WYq" secondAttribute="centerX" id="Qgf-u1-MmC"/>
                             <constraint firstItem="T7d-F5-jLL" firstAttribute="trailing" secondItem="z1i-sP-19k" secondAttribute="trailing" constant="20" id="R1c-X9-OJf"/>
+                            <constraint firstItem="olT-Wi-8kd" firstAttribute="leading" secondItem="T7d-F5-jLL" secondAttribute="leading" constant="20" id="Seq-Pm-M3N"/>
                             <constraint firstItem="Nh9-Ye-lqb" firstAttribute="trailing" secondItem="T7d-F5-jLL" secondAttribute="trailing" id="TW1-aM-tmR"/>
                             <constraint firstItem="T7d-F5-jLL" firstAttribute="trailing" secondItem="9qx-11-MLr" secondAttribute="trailing" id="U1o-0y-ZhY"/>
                             <constraint firstItem="z1i-sP-19k" firstAttribute="top" secondItem="Nh9-Ye-lqb" secondAttribute="bottom" constant="20" id="aLz-3x-OA4"/>
+                            <constraint firstItem="T7d-F5-jLL" firstAttribute="bottom" secondItem="olT-Wi-8kd" secondAttribute="bottom" constant="100" id="apk-lI-Kde"/>
                             <constraint firstItem="9qx-11-MLr" firstAttribute="top" secondItem="8cx-N0-r8F" secondAttribute="bottom" constant="30" id="ceN-ZB-8p1"/>
                             <constraint firstItem="z1i-sP-19k" firstAttribute="leading" secondItem="T7d-F5-jLL" secondAttribute="leading" constant="20" id="eeR-86-a5V"/>
+                            <constraint firstItem="T7d-F5-jLL" firstAttribute="trailing" secondItem="olT-Wi-8kd" secondAttribute="trailing" constant="20" id="fYS-lR-hnl"/>
                             <constraint firstItem="olV-BL-oeI" firstAttribute="leading" secondItem="T7d-F5-jLL" secondAttribute="leading" id="jnY-gj-5b9"/>
                             <constraint firstItem="8cx-N0-r8F" firstAttribute="leading" secondItem="T7d-F5-jLL" secondAttribute="leading" id="kq3-vE-kIA"/>
                             <constraint firstItem="8cx-N0-r8F" firstAttribute="top" secondItem="z1i-sP-19k" secondAttribute="bottom" constant="30" id="lX5-hf-6Yp"/>
@@ -189,16 +205,16 @@
     <resources>
         <image name="Pokemon-Logo-1" width="1200" height="442"/>
         <namedColor name="Blue">
-            <color red="0.22747397420000001" green="0.29397064449999999" blue="0.78186780209999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.22699999809265137" green="0.29399999976158142" blue="0.78200000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Red">
-            <color red="0.80352360010000001" green="0.21171051260000001" blue="0.1716146469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.80400002002716064" green="0.21199999749660492" blue="0.17200000584125519" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Red 2">
-            <color red="0.91533637050000005" green="0.24644649029999999" blue="0.2011285424" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.91500002145767212" green="0.2460000067949295" blue="0.20100000500679016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Yellow">
-            <color red="0.99229389430000003" green="0.8699209094" blue="0.1990928948" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.99199998378753662" green="0.87000000476837158" blue="0.19900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -23,8 +23,9 @@ class PokemonDetailViewController: UIViewController {
         label2.text = "Ability: " + recivedPokemon!.ability
         label3.text = "Move: " + recivedPokemon!.move
         label4.text = "Weight " + recivedPokemon!.weight
-    
     }
-
-
+    
+    @IBAction func goBackButton(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
